@@ -7,7 +7,7 @@ server:
       protocol-header: "x-forwarded-proto"
       protocol-header-https-value: "https"
       remote-ip-header: "x-forwarded-for"
-      internal-proxies: ".*" # trust everything we don't know ip address the k8s worker nodes are using if a service forwards the request 
+    #  internal-proxies: ".*" # trust everything we don't know ip address the k8s worker nodes are using if a service forwards the request
 
 spring:
   lifecycle:
