@@ -2,22 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: k8s-boot
-  name: k8s-boot
+    app: boot-net-debugger
+  name: boot-net-debugger
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: k8s-boot
+      app: boot-net-debugger
   strategy: {}
   template:
     metadata:
       labels:
-        app: k8s-boot
+        app: boot-net-debugger
     spec:
       containers:
-        - image: k8s-boot:1
-          name: k8s-boot
+        - image: "asaikali/boot-net-debugger:latest"
+          imagePullPolicy: Always
+          name: boot-net-debugger
           resources: {}
           livenessProbe:
             httpGet:

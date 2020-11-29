@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: k8s-boot
-  name: k8s-boot
+    app: boot-net-debugger
+  name: boot-net-debugger
 spec:
   type: NodePort
   ports:
@@ -11,5 +11,5 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-    app: k8s-boot
+    app: boot-net-debugger
 

@@ -48,6 +48,7 @@ class RequestController {
     result += "\n\nThe application is running on port: " + environment.getProperty("local.server.port");
     result += "\n\nThe application is running on address: " + environment.getProperty("local.server.address");
     result += "\n\nThe servlet request.isSecure(): " + request.isSecure();
+    result += "\n\nThe servlet request.getScheme(): " + request.getScheme();
     result += "\n\nThe servlet request.getProtocol(): " + request.getProtocol();
     result += "\n\nThe servlet request.getRemoteAddr(): " + request.getRemoteAddr();
     result += "\n\nThe servlet request.getRemotePort(): " + request.getRemotePort();

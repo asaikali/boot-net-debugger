@@ -1,6 +1,12 @@
 server:
   port: 8080
   shutdown: graceful # tell the server to wait for executing requests to finish before shutdown
+  forward-headers-strategy: "NATIVE"
+  tomcat:
+    remoteip:
+      protocol-header: "x-forwarded-proto"
+      protocol-header-https-value: "https"
+      remote-ip-header: "x-forwarded-for"
 
 spring:
   lifecycle:
