@@ -1,13 +1,15 @@
 server:
   port: 8080
   shutdown: graceful # tell the server to wait for executing requests to finish before shutdown
-  forward-headers-strategy: "NATIVE"
+  forward-headers-strategy:
   tomcat:
     remoteip:
       protocol-header: "x-forwarded-proto"
       protocol-header-https-value: "https"
       remote-ip-header: "x-forwarded-for"
-    #  internal-proxies: ".*" # trust everything we don't know ip address the k8s worker nodes are using if a service forwards the request
+      # trust everything we don't know ip address the k8s worker nodes are using if a service forwards the request
+      internal-proxies: ".*" # this is dangerous if  the app is accessible over the internet
+  # redirect-context-root: false
 
 spring:
   lifecycle:
